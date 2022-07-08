@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace ApiSensor.Controllers
 {
-    public class BackDoorController : ApiController
+    public class SensorBackDoorController : ApiController
     {
         // GET: api/BackDoor
         public IEnumerable<string> Get()
