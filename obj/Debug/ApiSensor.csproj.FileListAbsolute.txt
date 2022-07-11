@@ -90,3 +90,5 @@ C:\Users\Dickson\source\repos\ApiSensor\ApiSensor\obj\Debug\ApiSensor.csproj.Cor
 C:\Users\Dickson\source\repos\ApiSensor\ApiSensor\obj\Debug\ApiSensor.csproj.CopyComplete
 C:\Users\Dickson\source\repos\ApiSensor\ApiSensor\obj\Debug\ApiSensor.dll
 C:\Users\Dickson\source\repos\ApiSensor\ApiSensor\obj\Debug\ApiSensor.pdb
+C:\Users\Dickson\source\repos\ApiSensor\ApiSensor\bin\FIWARE.OrionClient.dll
+C:\Users\Dickson\source\repos\ApiSensor\ApiSensor\bin\FIWARE.OrionClient.pdb

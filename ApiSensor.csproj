@@ -157,9 +157,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\BackDoorController.cs" />
+    <Compile Include="Controllers\IoTAgentInitializationController.cs" />
+    <Compile Include="Controllers\SendMeasurementController.cs" />
+    <Compile Include="Controllers\SensorBackDoorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\oxygenSaturationController.cs" />
+    <Compile Include="Controllers\SensorProvisionToBrokerController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -249,6 +252,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FIWARE.OrionClient\FIWARE.OrionClient.csproj">
+      <Project>{647c47fa-0e65-4454-b02b-d44f2e9b4667}</Project>
+      <Name>FIWARE.OrionClient</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
