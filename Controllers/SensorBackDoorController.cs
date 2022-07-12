@@ -33,9 +33,9 @@ namespace ApiSensor.Controllers
                     direction = kvp.Value.ToString();                
             }
             
-            if (direction.Equals("up"))
+            if (direction.ToUpper().Equals("UP"))
                 WebApiConfig.ChangeDirectionSensorValueToUp();
-            else if (direction.Equals("down"))
+            else if (direction.Equals("DOWN"))
                 WebApiConfig.ChangeDirectionSensorValueToDown();
 
             return Request.CreateResponse(HttpStatusCode.OK, "");

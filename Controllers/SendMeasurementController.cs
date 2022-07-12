@@ -27,7 +27,7 @@ namespace ApiSensor.Controllers
         public async Task<IHttpActionResult> PostAsync(/*[FromBody]string value*/)
         {
             RESTClient<string> restClient = new RESTClient<string>();
-            Task<string> returnedTask = restClient.SendMeasurementFromSensorToBroker();
+            Task<string> returnedTask = restClient.SendMeasurementFromSensorToBroker(22.4f);
             string returnedValue = await returnedTask;
             //create Conflict return abd send it if necessary
             return Ok(returnedValue);

@@ -17,11 +17,11 @@ namespace ApiSensor.ArcaboucoSensor
 
         public string name { get; set; }
 
-        public double oxygenSaturationValue { get; set; }
+        public float oxygenSaturationValue { get; set; }
 
         public OxygenSaturationSensor()
         {
-            oxygenSaturationValue = 22.2;
+            oxygenSaturationValue = 22.2f;
             changingValueDirection = BOTTOM_UP_DIRECTION;
         }
 
@@ -41,13 +41,13 @@ namespace ApiSensor.ArcaboucoSensor
         private void increaseSensorValue()
         {
             if(oxygenSaturationValue <= UPPER_LIMIT)
-                oxygenSaturationValue += 0.1;
+                oxygenSaturationValue += 0.1f;
         }
 
         private void decreaseSensorValue()
         {
             if (oxygenSaturationValue >= LOWER_LIMIT)                
-                oxygenSaturationValue -= 0.1;
+                oxygenSaturationValue -= 0.1f;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FIWARE.OrionClient.IoTAgent;
+using FIWARE.OrionClient.REST;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -9,16 +11,20 @@ namespace ApiSensor.ArcaboucoSensor
 {
     public class AsyncClass
     {
-        OxygenSaturationSensor sensor = new OxygenSaturationSensor();
+        OxygenSaturationSensor simulatedSensor = new OxygenSaturationSensor();
 
         public void StartThread()
         {
-            Task task = new Task(() =>
+            Task task = new Task(async () =>
             {
                 while (true)
                 {
-                    sensor.changeSensorValue();
-                    Thread.Sleep(5000);
+                    simulatedSensor.changeSensorValue();
+
+                    RESTClient<string> restClient = new RESTClient<string>();
+                    Task<string> returnedTask = restClient.SendMeasurementFromSensorToBroker(simulatedSensor.oxygenSaturationValue);
+
+                    Thread.Sleep(2000);
                 }
             });
             task.Start();
@@ -26,17 +32,17 @@ namespace ApiSensor.ArcaboucoSensor
 
         public double GetSensorValue()
         {
-            return sensor.oxygenSaturationValue;
+            return simulatedSensor.oxygenSaturationValue;
         }
 
         public void ChangeDirectionSensorValueToUp()
         {
-            sensor.SetChangingValueDirection(OxygenSaturationSensor.BOTTOM_UP_DIRECTION);
+            simulatedSensor.SetChangingValueDirection(OxygenSaturationSensor.BOTTOM_UP_DIRECTION);
         }
 
         public void ChangeDirectionSensorValueToDown()
         {
-            sensor.SetChangingValueDirection(OxygenSaturationSensor.TOP_DOWN_DIRECTION);
+            simulatedSensor.SetChangingValueDirection(OxygenSaturationSensor.TOP_DOWN_DIRECTION);
         }
 
 
